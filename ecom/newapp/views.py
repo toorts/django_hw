@@ -15,7 +15,7 @@ def home(request):
     """
 
     # Логирование посещения страницы
-    logger.info("home get request")
+    logger.info("Home page accessed")
 
     return HttpResponse(html_content)
 
@@ -30,6 +30,6 @@ def about(request):
     """
 
     # Логирование посещения страницы
-    logger.info("about get request")
+    logger.info("About page accessed")
 
     return HttpResponse(html_content)

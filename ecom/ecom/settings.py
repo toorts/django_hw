@@ -150,7 +150,7 @@ LOGGING = {
             'handlers': ['console', 'file'],
             'level': 'INFO',
         },
-        'app_1': {
+        'newapp': {
             'handlers': ['console', 'file'],
             'level': 'DEBUG',
             'propagate': True,
