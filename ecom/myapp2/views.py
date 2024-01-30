@@ -1,8 +1,10 @@
 from django.shortcuts import render
+from django.core.files.storage import FileSystemStorage
 from django.utils import timezone
 from datetime import timedelta
 
 from .models import User, Order, Product
+from .forms import ImageForm
 
 
 def ordered_products(request, user_id):
@@ -29,3 +31,15 @@ def ordered_products(request, user_id):
     }
 
     return render(request, 'myapp2/ordered_products.html', context)
+
+
+def upload_image(request):
+    if request.method == 'POST':
+        form = ImageForm(request.POST, request.FILES)
+        if form.is_valid():
+            image = form.cleaned_data['image']
+            fs = FileSystemStorage()
+            fs.save(image.name, image)
+    else:
+        form = ImageForm()
+    return render(request, 'myapp2/upload_image.html', {'form': form})
