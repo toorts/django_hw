@@ -19,7 +19,7 @@ class ProductAdmin(admin.ModelAdmin):
     list_filter = ['added_date', 'price']
     search_fields = ['description']
     search_help_text = 'Поиск по полю Описание продукт (description)'
-    fields = ['name', 'description', 'category', 'price', 'added_date', 'image']
+    fields = ['name', 'description', 'price', 'added_date', 'image', 'quantity']
     readonly_fields = ['added_date']
     
     
